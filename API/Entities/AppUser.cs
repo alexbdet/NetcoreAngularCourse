@@ -6,10 +6,14 @@ namespace API.Entities
         /// Represents the AppUser's identification number.
         /// </summary> 
         public int Id { get; set; }
-        
+
         /// <summary>
         /// Represents the AppUser's username. 
         /// </summary>
         public string UserName { get; set; }
+
+        public byte[] PasswordHash { get; set; }
+
+        public byte[] PasswordSalt { get; set; }
     }
 }

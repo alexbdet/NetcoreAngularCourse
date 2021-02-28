@@ -7,11 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-
-
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
 
@@ -20,6 +16,9 @@ namespace API.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Gets a list of all registered users.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
@@ -36,7 +35,7 @@ namespace API.Controllers
 
             if (user is null)
                 return NotFound();
-                
+
             return user;
         }
     }

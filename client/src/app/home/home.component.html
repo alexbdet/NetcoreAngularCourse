@@ -13,10 +13,7 @@
   <div class="container" *ngIf="registerMode">
     <div class="row justify-content-center">
       <div class="col-4">
-        <app-register
-          [usersFromParent]="users"
-          (toggleRegisterMode)="registerToggle()"
-        ></app-register>
+        <app-register (toggleRegisterMode)="registerToggle()"></app-register>
       </div>
     </div>
   </div>

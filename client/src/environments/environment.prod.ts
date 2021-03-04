@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrls: {
+    apiUrl: 'api/',
+    accountUrl: 'account/',
+    membersUrl: 'users/'
+  }
 };

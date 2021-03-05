@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  fakeLongLoading: true,
   apiUrls: {
     apiUrl: 'https://localhost:5001/api/',
     accountUrl: 'account/',

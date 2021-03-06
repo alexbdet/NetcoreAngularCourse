@@ -7,6 +7,8 @@ import { AccountService } from 'src/app/_services/account.service';
 import { User } from 'src/app/_models/user';
 import { take } from 'rxjs/operators';
 import { BusyService } from 'src/app/_services/busy.service';
+import { MembersService } from 'src/app/_services/members.service';
+import { Photo } from 'src/app/_models/photo';
 
 @Component({
   selector: 'app-photo-editor',
@@ -25,7 +27,7 @@ export class PhotoEditorComponent implements OnInit {
   faBan = faBan;
   faUpload = faUpload;
 
-  constructor(private accountService: AccountService, private busyService: BusyService) {
+  constructor(private accountService: AccountService, private busyService: BusyService, private memberService: MembersService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
@@ -64,5 +66,17 @@ export class PhotoEditorComponent implements OnInit {
         this.member.photos.push(photo);
       }
     };
+  }
+
+  setMainPhoto(photo: Photo) {
+    this.memberService.setMainPhoto(photo.id).subscribe(() => {
+      this.user.photoUrl = photo.url;
+      this.accountService.setCurrentUser(this.user);
+      this.member.photoUrl = photo.url;
+      this.member.photos.forEach(p => {
+        if (p.isMain) p.isMain = false;
+        if (p.id == photo.id) p.isMain = true;
+      });
+    });
   }
 }

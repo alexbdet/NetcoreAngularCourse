@@ -28,7 +28,7 @@ export class AccountService {
       .post(this.baseUrl + this.accountUrl + 'register', model)
       .pipe(map((response: User) => this.setUserToStorage(response)));
   }
-
+ 
   setCurrentUser(user: User) {
     this.setUserToStorage(user);
   }

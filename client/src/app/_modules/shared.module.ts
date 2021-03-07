@@ -7,7 +7,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FileUploadModule } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [],
@@ -22,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgxSpinnerModule,
     FileUploadModule,
     FontAwesomeModule,
+    BsDatepickerModule.forRoot()
   ],
-  exports: [BsDropdownModule, ToastrModule, TabsModule, NgxGalleryModule, NgxSpinnerModule, FileUploadModule, FontAwesomeModule],
+  exports: [BsDropdownModule, ToastrModule, TabsModule, NgxGalleryModule, NgxSpinnerModule, FileUploadModule, FontAwesomeModule, BsDatepickerModule],
 })
 export class SharedModule { }

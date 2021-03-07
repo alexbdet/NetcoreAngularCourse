@@ -41,6 +41,12 @@ namespace API.Data
             query = query.Where(u => u.UserName != userParams.CurrentUsername)             // Filtering current user
                         .Where(u => u.Gender == userParams.Gender)                         // Filtering by gender
                         .Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);   // Filtering by age
+                        
+            query = userParams.OrderBy switch
+            {
+                "created" => query.OrderByDescending(u => u.Created),
+                _ => query.OrderByDescending(u => u.LastActive)
+            };
 
             return await PagedList<MemberDto>.CreateAsync(
                 query.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking(),

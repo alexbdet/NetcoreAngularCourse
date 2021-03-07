@@ -6,6 +6,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FileUploadModule } from 'ng2-file-upload';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -19,8 +20,9 @@ import { FileUploadModule } from 'ng2-file-upload';
     TabsModule.forRoot(),
     NgxGalleryModule,
     NgxSpinnerModule,
-    FileUploadModule
+    FileUploadModule,
+    FontAwesomeModule,
   ],
-  exports: [BsDropdownModule, ToastrModule, TabsModule, NgxGalleryModule, NgxSpinnerModule, FileUploadModule],
+  exports: [BsDropdownModule, ToastrModule, TabsModule, NgxGalleryModule, NgxSpinnerModule, FileUploadModule, FontAwesomeModule],
 })
 export class SharedModule { }

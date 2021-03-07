@@ -9,6 +9,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     FontAwesomeModule,
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
   ],
   exports: [
     BsDropdownModule,
@@ -35,6 +37,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     FileUploadModule,
     FontAwesomeModule,
     BsDatepickerModule,
-    PaginationModule],
+    PaginationModule,
+    ButtonsModule,
+  ]
 })
 export class SharedModule { }

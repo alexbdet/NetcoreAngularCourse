@@ -8,12 +8,9 @@ import { AccountService } from './_services/account.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title: string = 'The Dating app';
-  users: any;
-
   constructor(
     private accountService: AccountService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.setCurrentUser();

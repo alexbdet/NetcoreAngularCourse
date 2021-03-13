@@ -9,25 +9,25 @@ import { MessageService } from 'src/app/_services/message.service';
 })
 export class MemberMessagesComponent implements OnInit {
   @ViewChild("messageInput") message: ElementRef;
-  @Input() messages: Message[];
   @Input() username: string;
 
+  messages: Message[];
   messageContent: string;
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
-  }
-
-  sendMessage() {
-    this.messageService.sendMessage(this.username, this.messageContent).subscribe(res => {
-      this.messages.push(res);
-      this.messageContent = "";
-
+    this.messageService.messageThread$.subscribe(res => {
       setTimeout(() => { // this will make the execution after the above boolean has changed
         this.message.nativeElement.focus();
         window.scrollTo(0, document.body.scrollHeight);
       }, 0);
+    });
+  }
+
+  sendMessage() {
+    this.messageService.sendMessage(this.username, this.messageContent).then(() => {
+      this.messageContent = "";
     });
   }
 

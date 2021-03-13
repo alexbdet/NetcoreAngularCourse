@@ -48,5 +48,5 @@ export class MessagesComponent implements OnInit {
       this.pageNumber = event.page;
       this.loadMessages();
     }
-  }
+  } 
 }

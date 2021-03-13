@@ -4,6 +4,7 @@ export const environment = {
   apiUrls: {
     apiUrl: 'api/',
     accountUrl: 'account/',
-    membersUrl: 'users/'
+    membersUrl: 'users/',
+    hubUrl: 'hubs/'
   }
 };

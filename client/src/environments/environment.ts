@@ -8,7 +8,8 @@ export const environment = {
   apiUrls: {
     apiUrl: 'https://localhost:5001/api/',
     accountUrl: 'account/',
-    membersUrl: 'users/'
+    membersUrl: 'users/',
+    hubUrl: 'https://localhost:5001/hubs/'
   }
 };
 

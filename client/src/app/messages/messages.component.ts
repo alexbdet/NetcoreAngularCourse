@@ -43,10 +43,16 @@ export class MessagesComponent implements OnInit {
     });
   }
 
+  deleteMessage(id: number) {
+    this.messageService.deleteMessage(id).subscribe(() => {
+      this.loadMessages();
+    });
+  }
+
   pageChanged(event: any) {
     if (this.pageNumber !== event.page) {
       this.pageNumber = event.page;
       this.loadMessages();
     }
-  } 
+  }
 }

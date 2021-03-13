@@ -47,7 +47,7 @@
                 <td>{{message.messageSent | timeago}}</td>
 
                 <td>
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger" (click)="$event.stopPropagation()" (click)="deleteMessage(message.id)">
                         <fa-icon [icon]="faTrash"></fa-icon>
                     </button>
                 </td>

@@ -21,7 +21,10 @@
     </div>
     <div class="card-body p-1">
         <h6 class="card-title text-center mb-1">
-            <fa-icon [icon]="faUser" class="mr-2"></fa-icon>
+            <span [class.is-online]="(presenceService.onlineUsers$ | async).includes(member.username)">
+                <fa-icon [icon]="faUser" class="mr-2"></fa-icon>
+            </span>
+
             {{member.knownAs}}, {{member.age}}
         </h6>
         <p class="card-text text-muted text-center">{{member.city}}</p>

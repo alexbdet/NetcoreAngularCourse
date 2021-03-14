@@ -36,12 +36,14 @@ namespace API.Controllers
             if (userParams is null)
                 userParams = new UserParams();
 
-            var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUsername());
-            userParams.CurrentUsername = user.UserName;
+            userParams.CurrentUsername = User.GetUsername();
 
             // Defaulting to opposite gender if not provided
             if (string.IsNullOrEmpty(userParams.Gender))
-                userParams.Gender = user.Gender == "male" ? "female" : "male";
+            {
+                var gender = await _unitOfWork.UserRepository.GetUserGender(User.GetUsername());
+                userParams.Gender = gender == "male" ? "female" : "male";
+            }
 
             var users = await _unitOfWork.UserRepository.GetMembersAsync(userParams);
             Response.AddPaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);

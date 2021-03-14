@@ -41,7 +41,7 @@ namespace API.Data
             query = query.Where(u => u.UserName != userParams.CurrentUsername)             // Filtering current user
                         .Where(u => u.Gender == userParams.Gender)                         // Filtering by gender
                         .Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);   // Filtering by age
-                        
+
             query = userParams.OrderBy switch
             {
                 "created" => query.OrderByDescending(u => u.Created),
@@ -67,13 +67,18 @@ namespace API.Data
                 .SingleOrDefaultAsync(u => u.UserName == username);
         }
 
+        public async Task<string> GetUserGender(string username)
+        {
+            return await _context.Users.Where(x => x.UserName == username).Select(u => u.Gender).FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
         {
             return await _context.Users
                 .Include(p => p.Photos)
                 .ToListAsync();
-        } 
-        
+        }
+
         public void Update(AppUser user)
         {
             _context.Entry(user).State = EntityState.Modified;

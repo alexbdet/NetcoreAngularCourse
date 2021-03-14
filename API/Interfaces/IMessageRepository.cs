@@ -16,6 +16,8 @@ namespace API.Interfaces
 
         Task<Group> GetMessageGroup(string groupName);
 
+        Task<Group> GetGroupForConnection(string connectionId);
+
         void AddMessage(Message message);
 
         void DeleteMessage(Message message);

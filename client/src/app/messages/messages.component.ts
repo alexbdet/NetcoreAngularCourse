@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faEnvelope, faEnvelopeOpen, faPaperPlane, faPlane, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Message } from '../_models/message';
 import { Pagination } from '../_models/pagination';
+import { ConfirmService } from '../_services/confirm.service';
 import { MessageService } from '../_services/message.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class MessagesComponent implements OnInit {
 
   loaded = true;
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private confirmService: ConfirmService) { }
 
   ngOnInit(): void {
     this.loadMessages();
@@ -44,8 +45,12 @@ export class MessagesComponent implements OnInit {
   }
 
   deleteMessage(id: number) {
-    this.messageService.deleteMessage(id).subscribe(() => {
-      this.loadMessages();
+    this.confirmService.confirm("Confirm delete message", "This cannot be undone", "Delete message").subscribe(result => {
+      if (result) {
+        this.messageService.deleteMessage(id).subscribe(() => {
+          this.loadMessages();
+        });
+      }
     });
   }
 

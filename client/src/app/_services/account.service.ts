@@ -48,16 +48,15 @@ export class AccountService {
 
       localStorage.setItem('user', JSON.stringify(user));
       this.currentUserSource.next(user);
-      
-      if (setPresence)
-        this.presenceService.createHubConnection(user);
+
+      if (setPresence) this.presenceService.createHubConnection(user);
     }
 
     return user;
   }
 
   // Retrieves the payload from a JWT token
-  getDecodedToken(token) {
+  getDecodedToken(token: string) {
     return JSON.parse(atob(token.split('.')[1]));
   }
 }

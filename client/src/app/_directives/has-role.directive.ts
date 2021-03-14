@@ -1,10 +1,10 @@
 import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { take, throwIfEmpty } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
 
 @Directive({
-  selector: '[appHasRole]' // *appHasRole="['Admin']"
+  selector: '[appHasRole]'
 })
 export class HasRoleDirective implements OnInit {
 

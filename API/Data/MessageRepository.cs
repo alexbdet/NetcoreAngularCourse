@@ -98,10 +98,7 @@ namespace API.Data
             var unreadMessages = messages.Where(m => m.DateRead is null && m.Recipient.UserName == currentUsername).ToList();
 
             if (unreadMessages.Any())
-            {
                 foreach (var mess in unreadMessages) mess.DateRead = DateTime.UtcNow;
-                await _context.SaveChangesAsync();
-            }
 
             return _mapper.Map<IEnumerable<MessageDto>>(messages);
         }
@@ -110,7 +107,5 @@ namespace API.Data
         {
             _context.Connections.Remove(connection);
         }
-
-        public async Task<bool> SaveAllAsync() => await _context.SaveChangesAsync() > 0;
     }
 }

@@ -14,12 +14,10 @@ export class RolesModalComponent implements OnInit {
 
   constructor(public bsModalRef: BsModalRef) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   updateRoles() {
     this.updateSelectedRoles.emit(this.roles);
     this.bsModalRef.hide();
   }
-
 }

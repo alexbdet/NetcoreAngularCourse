@@ -51,6 +51,16 @@ The project includes:
 * Messaging other users
 * Photo upload and profile editing
 
+### Demo
+
+You can check out the [Demo](https://datingapp-ab.herokuapp.com) on Heroku.
+
+Either register a new account (no mail required) or use one of the sample users :
+* autumn / Pa$$w0rd
+* gordon / Pa$$w0rd
+
+Online presence and notifications can be tester by logging in with a second user in another browser / in a private browser window.
+
 ### Built With
 
 The .NET Core (v5.0.1) API includes :

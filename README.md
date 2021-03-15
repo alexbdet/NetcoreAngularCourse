@@ -11,9 +11,9 @@
     <br />
     <a href="https://datingapp-ab.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/redowl0v0/dating-app/issues">Report Bug</a>
+    <a href="https://github.com/alexbdet/dating-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/redowl0v0/dating-app/issues">Request Feature</a>
+    <a href="https://github.com/alexbdet/dating-app/issues">Request Feature</a>
   </p>
 </p>
 

@@ -85,7 +85,7 @@ Features still pending :
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [LinkedIn](https://www.linkedin.com/in/alex-beaudet/) - alexandre.bdet@gmail.com
+Alexandre Beaudet - [LinkedIn](https://www.linkedin.com/in/alex-beaudet/) - alexandre.bdet@gmail.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 

@@ -26,6 +26,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#demo">Demo</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -61,6 +62,8 @@ Either register a new account (no mail required) or use one of the sample users 
 
 Online presence and notifications can be tester by logging in with a second user in another browser / in a private browser window.
 
+Do keep in mind that at this date, the application isn't responsive. Testing on a mobile might lead to buggy display.
+
 ### Built With
 
 The .NET Core (v5.0.1) API includes :
@@ -77,6 +80,7 @@ The front-end uses Angular (v10) and Bootstrap (v4).
 Features still pending :
 * Photo approval process for the moderators
 * Unit testing for the API & front-end
+* Responsive design
 
 <!-- CONTACT -->
 ## Contact

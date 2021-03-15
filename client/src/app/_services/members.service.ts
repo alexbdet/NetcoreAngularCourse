@@ -29,7 +29,9 @@ export class MembersService {
   }
 
   getUserParams() { return this.userParams };
+
   setUserParams(params: UserParams) { this.userParams = params };
+
   resetUserParams() {
     this.userParams = new UserParams(this.user);
     return this.userParams;
@@ -92,6 +94,4 @@ export class MembersService {
 
     return getPaginatedResult<Partial<Member[]>>(this.baseUrl + 'likes', params, this.http);
   }
-
- 
 }

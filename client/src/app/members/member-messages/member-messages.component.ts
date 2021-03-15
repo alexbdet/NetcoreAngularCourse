@@ -14,14 +14,18 @@ export class MemberMessagesComponent implements OnInit {
 
   messages: Message[];
   messageContent: string;
+  loading = false;
 
   constructor(public messageService: MessageService) { }
 
   ngOnInit(): void { }
 
   sendMessage() {
-    this.messageService.sendMessage(this.username, this.messageContent).then(() => {
-      this.messageContent = "";
-    });
+    this.loading = true;
+    this.messageService.sendMessage(this.username, this.messageContent)
+      .then(() => {
+        this.messageContent = "";
+      })
+      .finally(() => this.loading = false);
   }
 }

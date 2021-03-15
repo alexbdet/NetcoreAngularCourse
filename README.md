@@ -40,7 +40,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://res.cloudinary.com/alexbdet/image/upload/v1615773975/Capture_j1mpqs.jpg)
+![screen](https://res.cloudinary.com/alexbdet/image/upload/v1615773975/Capture_j1mpqs.jpg)
+
 
 A generic dating application created while following Neil Cummings course.
 
